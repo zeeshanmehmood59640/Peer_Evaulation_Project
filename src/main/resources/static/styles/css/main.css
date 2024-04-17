@@ -1,0 +1,56 @@
+header{
+    background-image:url("images/Purple White Organic Product Branding Presentation.png") ;
+    background-size: cover;
+}
+h1{
+    color: whitesmoke;
+}
+.main-box{
+    border-radius: 15px;
+    border: 2px solid black;
+}
+a{
+    padding: 10px 25px;
+    text-decoration: none;
+    border: 1px solid darkblue;
+    border-radius: 100px;
+    color: white;
+    background-color: darkblue;
+    transition: 0.3s;
+    font-weight: bold;
+}
+input[type="submit"]{
+    padding: 10px 35px;
+    border: 1px solid #000;
+    transition: 0.3s;
+    border-radius: 100px;
+}
+input[type="submit"]:hover{
+    color: white;
+    background-color: darkgrey;
+}
+a:hover{
+    color: darkblue;
+    background-color: white;
+}
+.form-control{
+    border: 1px solid #000!important;
+}
+@media screen and (min-width: 992px){
+    .index-form{
+        padding-left:  12rem!important;
+        padding-right: 12rem!important;
+    }
+}
+.vince{
+
+}
+.marin{
+    
+}
+@media screen and (min-width: 1280px){
+    .index-form{
+        padding-left:  15rem!important;
+        padding-right: 15rem!important;
+    }
+}
