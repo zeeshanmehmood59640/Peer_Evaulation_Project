@@ -139,7 +139,7 @@ a:hover{
     }
 }
 .marin{
-    
+
 }
 @media screen and (min-width: 1280px){
     .index-form{
@@ -147,3 +147,245 @@ a:hover{
         padding-right: 15rem!important;
     }
 }
+
+.Marin-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.Marin-container {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+
+.Marin-form {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+}
+
+.Marin-input[type="text"], .Marin-input[type="Submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.Marin-input[type="Submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Marin-input[type="Submit"]:hover {
+    background-color: #218838;
+}
+
+.Marin-label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .Marin-container {
+        width: 90%;
+        padding: 1em;
+    }
+}
+
+.marin1-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.marin1-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.marin1-title {
+    font-size: 2em;
+    color: #dc3545;
+}
+
+.marin1-message {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.marin1-link {
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.marin1-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.marin2-body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.marin2-content {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.marin2-title {
+    font-size: 2em;
+    color: darkblue;
+}
+
+.marin2-message {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.marin2-link {
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.marin2-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.marin3-body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+
+.marin3-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.marin3-title {
+    font-size: 2em;
+    color: #007bff;
+}
+
+.marin3-form {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.marin3-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.marin3-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.marin3-button:hover {
+    background-color: #218838;
+}
+/* General body styling */
+.marin4-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+.marin4-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.marin4-title {
+    font-size: 2em;
+    color: darkblue;
+    margin-top: 20px;
+}
+
+.marin4-form {
+    text-align: center;
+    padding: 20px;
+}
+
+.marin4-button {
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.marin4-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+
+
