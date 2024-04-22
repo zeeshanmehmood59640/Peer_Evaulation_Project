@@ -11,26 +11,29 @@
 </head>
 <body>
 <header class="py-5"><h1 class="text-center">PEER EVALUATION PROJECT</h1></header>
-<div th:if="${students.size()!=0}">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>r-number</th>
-            <th>Section</th>
-        </tr>
-        <tr th:each="student: ${students}">
-            <td th:text="${student.getName()}"></td>
-            <td th:text="${student.getRnmuber()}"></td>
-            <td th:text="${student.getSection()}"></td>
-        </tr>
-    </table>
-    <p><a href="/teacher">Back</a></p>
-</div>
-<div th:if="${students.size()==0}">
-    <p>No group member added yet</p>
-    <p><a href="/teacher">Back</a></p>
-</div>
+<div class="container text-center">
+    <div class="row justify-content-center members-table text-center m-3 p-5" th:if="${students.size()!=0}">
+        <table class="col-6">
+            <tr >
+                <th>Name</th>
+                <th>r-number</th>
+                <th>Section</th>
+            </tr>
+            <tr  th:each="student: ${students}">
+                <td th:text="${student.getName()}"></td>
+                <td th:text="${student.getRnmuber()}"></td>
+                <td th:text="${student.getSection()}"></td>
+            </tr>
+        </table>
 
+    </div>
+    <p class="text-center"><a href="/teacher">Back</a></p>
+    <div th:if="${students.size()==0}">
+        <p>No group member added yet</p>
+        <p><a href="/teacher">Back</a></p>
+    </div>
+
+</div>
 
 </body>
 </html>
