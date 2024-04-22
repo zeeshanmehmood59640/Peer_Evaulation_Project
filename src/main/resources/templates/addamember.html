@@ -8,29 +8,27 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link th:href="@{/styles/css/main.css}" rel="stylesheet"/>
 </head>
-<body>
+<body class="Marin-body">
 <header class="py-5"><h1 class="text-center">PEER EVALUATION PROJECT</h1></header>
-<div class="container my-5 text-center">
+<div class="Marin-container my-5 text-center">
     <h2>Add a new group member</h2>
-    <form action="/register" >
+    <form action="/register" class="Marin-form">
         <p>
-            <label for="name" class="form-label" >Enter name of student:</label>
-            <input type="text" name="name" id="name" required>
+            <label for="name" class="Marin-label form-label">Enter name of student:</label>
+            <input type="text" name="name" id="name" class="Marin-input" required>
         </p>
         <p>
-            <label for="rnumber" class="form-label">r-number:</label>
-            <input type="text" name="rnumber" id="rnumber" required>
+            <label for="rnumber" class="Marin-label form-label">r-number:</label>
+            <input type="text" name="rnumber" id="rnumber" class="Marin-input" required>
         </p>
         <p>
-            <label for="section" class="form-label">Section:</label>
-            <input type="text" name="section" id="section">
+            <label for="section" class="Marin-label form-label">Section:</label>
+            <input type="text" name="section" id="section" class="Marin-input">
         </p>
         <p>
-            <input type="submit" value="submit" name="submit">
+            <input type="Submit" value="Submit" name="Submit" class="Marin-input">
         </p>
     </form>
-
 </div>
-
 </body>
 </html>

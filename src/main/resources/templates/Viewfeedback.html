@@ -10,26 +10,31 @@
 
 </head>
 <body>
-<h2>Feedback Averages for Each Student</h2>
-<table>
-    <thead>
-    <tr>
-        <th>Student Name</th>
-        <th>Student Number</th>
-        <th>Section</th>
-        <th th:each="criterion : ${criteriaArray}"> <span th:text="${criterion}"></span></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="result : ${results}">
-        <td th:text="${result.name}"></td>
-        <td th:text="${result.getRnumber()}"></td>
-        <td th:text="${result.getSection()}"></td>
-        <td th:each="feedback : ${result.getFeedbacks()}"
-         th:text="${feedback}">
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="vince">
+    <header class="py-5"><h1 class="text-center">PEER EVALUATION PROJECT</h1></header>
+    <div class="viewFeedBack">
+        <h2>Feedback Averages for Each Student</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student Number</th>
+                <th>Section</th>
+                <th th:each="criterion : ${criteriaArray}"> <span th:text="${criterion}"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="result : ${results}">
+                <td th:text="${result.name}"></td>
+                <td th:text="${result.getRnumber()}"></td>
+                <td th:text="${result.getSection()}"></td>
+                <td th:each="feedback : ${result.getFeedbacks()}"
+                    th:text="${feedback}">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

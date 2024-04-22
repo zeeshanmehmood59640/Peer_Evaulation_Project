@@ -10,19 +10,26 @@
 
 </head>
 <body>
-<h3 th:text="'Feedback for '+${name}"></h3>
-<form action="/addfeedback" method="post">
-    <!-- Iterate over criteriaArray -->
-    <div th:each="criterion : ${criteriaArray}">
-        <label th:text="${criterion}"></label>
-        <input type="number" name="feedback" min="0" max="10" required>
-        <input type="hidden" name="criterionName" th:value="${criterion}">
+<div class="vince">
+    <header class="py-5"><h1 class="text-center">PEER EVALUATION PROJECT</h1></header>
+    <div class="submitFeedback">
+        <div class="feedbackinput">
+            <h3 th:text="'Feedback for '+${name}"></h3>
+            <form action="/addfeedback" method="post">
+                <!-- Iterate over criteriaArray -->
+                <div th:each="criterion : ${criteriaArray}">
+                    <label th:text="${criterion}"></label>
+                    <input type="number" name="feedback" min="0" max="10" required>
+                    <input type="hidden" name="criterionName" th:value="${criterion}">
+                </div>
+                <input type="hidden" name="ownNumber" th:value="${ownNumber}">
+                <input type="hidden" name="studentRnumber" th:value="${rnumber}">
+                <input type="hidden" name="studentName" th:value="${name}">
+                <input type="submit" value="Submit Feedback" class="submit">
+            </form>
+        </div>
+        <p><a href="/">back</a></p>
     </div>
-    <input type="hidden" name="ownNumber" th:value="${ownNumber}">
-    <input type="hidden" name="studentRnumber" th:value="${rnumber}">
-    <input type="hidden" name="studentName" th:value="${name}">
-    <input type="submit" value="Submit Feedback">
-</form>
-<p><a href="/">back</a></p>
+</div>
 </body>
 </html>
