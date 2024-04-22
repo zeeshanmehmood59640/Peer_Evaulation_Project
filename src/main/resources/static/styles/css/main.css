@@ -43,7 +43,100 @@ a:hover{
     }
 }
 .vince{
-
+    .submitFeedback{
+        border-radius: 15px;
+        border: 2px solid black;
+        margin: 30px 30px 10px 30px;
+        padding: 10px 10px 10px 10px;
+        .feedbackinput{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h3{
+                font-size: 30px;
+            }
+            form{
+                div{
+                    display: flex;flex-direction: row;
+                    justify-content: space-between;
+                    label{
+                        padding-right: 40px;
+                    }
+                }
+                .submit{
+                    position: absolute;
+                    margin-top: 20px;
+                    margin-left: 75px;
+                }
+            }
+        }
+        p{
+            margin-top: 30px;
+        }
+    }
+    .teacher{
+        div{
+            .group{
+                display: flex;
+                flex-direction: column;
+                border-radius: 15px;
+                border: 2px solid black;
+                margin: 30px 30px 10px 30px;
+                padding: 10px 10px 10px 10px;
+            }
+            .evaluation-criteria{
+                border-radius: 15px;
+                border: 2px solid black;
+                margin: 30px 30px 10px 30px;
+                padding: 10px 10px 10px 10px;
+                h4{
+                    text-align: left;
+                }
+                form{
+                    div{
+                        label{
+                            padding-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .otherButtons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 15px 30px 10px 30px;
+            padding: 0px 10px 10px 10px;
+        }
+    }
+    /*i left the teacherexists page as is because i thought it looks good enough already,
+    if you guys think it doesn't i'll style it to the best of my abilities*/
+    .viewCriteria{
+        .criteria{
+            border-radius: 15px;
+            border: 2px solid black;
+            margin: 30px 30px 10px 30px;
+            padding: 10px 10px 10px 10px;
+        }
+        p{
+            margin: 30px 30px 10px 30px;
+        }
+    }
+    .viewFeedBack{
+        border-radius: 15px;
+        border: 2px solid black;
+        margin: 30px 30px 10px 30px;
+        padding: 10px 10px 10px 10px;
+        table{
+            thead{
+                tr{
+                    th{
+                        padding-right: 30px;
+                    }
+                }
+            }
+        }
+    }
 }
 .marin{
     
