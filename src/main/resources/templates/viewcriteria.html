@@ -10,11 +10,17 @@
 
 </head>
 <body>
-<h2>Peer Evaluation Criteria</h2>
-<ul>
-
-    <li th:each="criteria : ${criteriaArray}" th:text="${criteria}"></li>
-</ul>
-<p><a href="/teacher">Back</a></p>
+<div class="vince">
+    <header class="py-5"><h1 class="text-center">PEER EVALUATION PROJECT</h1></header>
+    <div class="viewCriteria">
+        <div class="criteria">
+            <h2>Peer Evaluation Criteria</h2>
+            <ul>
+                <li th:each="criteria : ${criteriaArray}" th:text="${criteria}"></li>
+            </ul>
+        </div>
+        <p><a href="/teacher">Back</a></p>
+    </div>
+</div>
 </body>
 </html>
