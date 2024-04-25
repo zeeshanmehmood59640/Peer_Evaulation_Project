@@ -98,25 +98,36 @@ a:hover{
     .teacher{
         div{
             .group{
-                display: flex;
-                flex-direction: column;
-                border-radius: 15px;
-                border: 2px solid black;
-                margin: 30px 30px 10px 30px;
-                padding: 10px 10px 10px 10px;
+                .customborder{
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 15px;
+                    border: 2px solid black;
+                    margin: 30px 30px 10px 30px;
+                    padding: 10px 10px 20px 10px;
+                    div{
+                        p{
+                            font-weight: bold;
+                            font-size: 22px;
+                            margin-bottom: 40px;
+                        }
+                    }
+                }
             }
             .evaluation-criteria{
                 border-radius: 15px;
                 border: 2px solid black;
-                margin: 30px 30px 10px 30px;
+                margin: 30px 175px 10px 175px;
                 padding: 10px 10px 10px 10px;
                 h4{
-                    text-align: left;
+                    text-align: center;
+                    margin-bottom: 20px;
                 }
                 form{
                     div{
-                        label{
-                            padding-left: 40px;
+                        input{
+                            margin-right: 170px;
+                            margin-bottom: 10px;
                         }
                     }
                 }
@@ -133,14 +144,22 @@ a:hover{
     /*i left the teacherexists page as is because i thought it looks good enough already,
     if you guys think it doesn't i'll style it to the best of my abilities*/
     .viewCriteria{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .criteria{
             border-radius: 15px;
             border: 2px solid black;
-            margin: 30px 30px 10px 30px;
+            margin: 30px 500px 10px 500px;
             padding: 10px 10px 10px 10px;
+            text-align: center;
+            li{
+                text-align: left;
+            }
         }
         p{
-            margin: 30px 30px 10px 30px;
+            text-align: center; /* Add this line to center the text */
+            margin: 30px auto;
         }
     }
     .viewFeedBack{
