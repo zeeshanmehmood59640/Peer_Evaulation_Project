@@ -1,9 +1,10 @@
-package com.example.peer_evaluation_project.Model;
+package com.example.peer_evaluation_project.model;
 
 public class Result {
     String name,rnumber,section;
     private String[] criterionNames;
     private double[] feedbacks;
+    double totalSum;
 
     public Result() {
 
@@ -60,5 +61,11 @@ public class Result {
         this.criterionNames = criterionNames;
     }
 
+    public double getTotalSum() {
+        return totalSum;
+    }
 
+    public void setTotalSum(double totalSum) {
+        this.totalSum = totalSum;
+    }
 }

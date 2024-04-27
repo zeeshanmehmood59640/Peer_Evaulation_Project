@@ -1,21 +1,14 @@
 package com.example.peer_evaluation_project.controller;
-
-
-
-
-import com.example.peer_evaluation_project.Model.Feedback;
-import com.example.peer_evaluation_project.Model.Result;
-import com.example.peer_evaluation_project.Model.Teacher;
+import com.example.peer_evaluation_project.model.Feedback;
+import com.example.peer_evaluation_project.model.Result;
+import com.example.peer_evaluation_project.model.Teacher;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.*;
-
 import com.example.peer_evaluation_project.model.Student;
-
 @Controller
 public class MainController {
     private ArrayList<Student> students= new ArrayList<>();
@@ -139,7 +132,7 @@ public class MainController {
     @RequestMapping("/checkstudent")
     public String checkstudent(HttpServletRequest request,Model model) {
         String inRnumber = request.getParameter("r-number");
-        System.out.println("entered number"+inRnumber);
+        System.out.println("/checkstudent ....: entered number "+inRnumber);
         boolean rnumberFound = false;
         for (Student student : students) {
             System.out.println(student.getRnmuber());
@@ -151,10 +144,10 @@ public class MainController {
             }
         }
         if (rnumberFound) {
-            System.out.println("student found");
+            System.out.println("student found..opening student page");
             return "studentpage";
         } else {
-            System.out.println("student not found");
+            System.out.println("student not found..opening studentnotfound page");
             return "studentnotfound";
         }
     }
@@ -233,52 +226,62 @@ public class MainController {
     }
     @RequestMapping("/Viewfeedback")
     public String viewFeedback(Model model) {
-
-        for (Student student: students){
-            results.add(new Result(student.getName(),student.getRnmuber(),student.getSection(),criteriaArray.length));
-        }
-        for (Result result:results){
-            double[] sumFeedback;
-            int count=0;
-            sumFeedback= result.getFeedbacks();
-            for (Feedback feedback:feedbacks){
-                if (feedback.getStudentNumber().equals(result.getRnumber())){
-                    count++;
-                    String[] pervfeed;
-                    pervfeed=feedback.getFeedbacks();
-                    double[] previosResult=new double[feedback.getFeedbacks().length];
-                    for (int i=0;i<feedback.getFeedbacks().length;i++){
-                        previosResult[i]=Double.parseDouble(pervfeed[i]);
-                        sumFeedback[i]+=previosResult[i];
+        if(results.isEmpty()){
+            for (Student student: students){
+                results.add(new Result(student.getName(),student.getRnmuber(),student.getSection(),criteriaArray.length));
+            }
+            for (Result result:results){
+                double[] sumFeedback;
+                int count=0;
+                double total=0;
+                sumFeedback= result.getFeedbacks();
+                for (Feedback feedback:feedbacks){
+                    if (feedback.getStudentNumber().equals(result.getRnumber())){
+                        count++;
+                        String[] pervfeed;
+                        pervfeed=feedback.getFeedbacks();
+                        double[] previosResult=new double[feedback.getFeedbacks().length];
+                        for (int i=0;i<feedback.getFeedbacks().length;i++){
+                            previosResult[i]=Double.parseDouble(pervfeed[i]);
+                            sumFeedback[i]+=previosResult[i];
+                        }
                     }
+                    result.setCriterionNames(feedback.getCriterionNames());
                 }
-                result.setCriterionNames(feedback.getCriterionNames());
+                for (int i=0; i<sumFeedback.length;i++){
+                    sumFeedback[i]/=count;
+                    total+=sumFeedback[i];
+                }
+                result.setTotalSum(total);
+                result.setFeedbacks(sumFeedback);
             }
-            for (int i=0; i<sumFeedback.length;i++){
-                sumFeedback[i]/=count;
+            for (Result result:results){
+                System.out.println(Arrays.toString(result.getFeedbacks()));
             }
-            result.setFeedbacks(sumFeedback);
         }
-        for (Result result:results){
-            System.out.println(Arrays.toString(result.getFeedbacks()));
-        }
-
         model.addAttribute("results",results);
         model.addAttribute("criteriaArray",criteriaArray);
-
         return "Viewfeedback";
     }
     @RequestMapping("/checkrecommendation")
     public String checkrecommendation(HttpServletRequest request,Model model){
         String rNumb=request.getParameter("student");
         ArrayList<String> lessResult=new ArrayList<>();
+        Student currentStudent=new Student();
         boolean feedBackExists=false;
+        for (Student student:students){
+            if(student.getRnmuber().equals(rNumb)){
+                currentStudent=student;
+                System.out.println("/checkrecommendation....\n"+currentStudent.getName());
+                System.out.println("feedback: "+currentStudent.getTeacherFeedback());
+            }
+        }
+
         for (Result result:results){
             if (result.getRnumber().equals(rNumb)){
                 feedBackExists=true;
                 double[] feedback=result.getFeedbacks();
                 String[] criterias=result.getCriterionNames();
-
                 for(int i=0;i< feedback.length;i++){
                     if (feedback[i]<5){
                         lessResult.add(criterias[i]);
@@ -291,10 +294,29 @@ public class MainController {
             Boolean lengthCheck=lessResult.isEmpty();
             model.addAttribute("lessResult",lessResult);
             model.addAttribute("lengthCheck",lengthCheck);
+            model.addAttribute("currentStudent",currentStudent);
             return "viewrecommendation";
         }else{
-            return "studentnotfound";
+            return "no_recommendation";
         }
+    }
+    @RequestMapping("/teacher_feedback")
+    public String teacher_feedback(HttpServletRequest request,Model model){
+        String yeNumber= request.getParameter("r_Number");
+        String teacherNote=request.getParameter("teacherFeedback");
+        for(Student student:students){
+            if(student.getRnmuber().equals(yeNumber)){
+                student.setTeacherFeedback(teacherNote);
+                System.out.println("/teacher_feedback\nFeedback: "+student.getTeacherFeedback());
+                System.out.println("rumberoffeedback: "+yeNumber);
+                break;
+            }
+
+        }
+        model.addAttribute("results",results);
+        model.addAttribute("criteriaArray",criteriaArray);
+        return "Viewfeedback";
+
     }
 
 }

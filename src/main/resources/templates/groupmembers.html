@@ -25,9 +25,9 @@
                 <td th:text="${student.getSection()}"></td>
             </tr>
         </table>
-
+        <p class="text-center m-5"><a href="/teacher">Back</a></p>
     </div>
-    <p class="text-center"><a href="/teacher">Back</a></p>
+
     <div th:if="${students.size()==0}">
         <p>No group member added yet</p>
         <p><a href="/teacher">Back</a></p>
