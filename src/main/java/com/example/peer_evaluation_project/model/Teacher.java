@@ -1,4 +1,4 @@
-package com.example.peer_evaluation_project.Model;
+package com.example.peer_evaluation_project.model;
 
 public class Teacher {
     private String firstName,lastName,email,password;

@@ -1,4 +1,4 @@
-package com.example.peer_evaluation_project.Model;
+package com.example.peer_evaluation_project.model;
 
 public class Feedback {
     private String studentNumber,studentName,reviewerNumber;

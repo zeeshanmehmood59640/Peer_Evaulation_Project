@@ -1,7 +1,7 @@
 package com.example.peer_evaluation_project.model;
 
 public class Student {
-    private String name, rnmuber,section;
+    private String name, rnmuber,section,teacherFeedback;
 
     public Student() {
     }
@@ -34,5 +34,13 @@ public class Student {
 
     public void setSection(String section) {
         this.section = section;
+    }
+
+    public String getTeacherFeedback() {
+        return teacherFeedback;
+    }
+
+    public void setTeacherFeedback(String teacherFeedback) {
+        this.teacherFeedback = teacherFeedback;
     }
 }

@@ -31,7 +31,14 @@ a{
 
     }
 }
-
+.viewrecom{
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 0 0 15px darkgrey;
+    li{
+        list-style: none;
+    }
+}
 .back{
     color: darkblue!important;
     background-color: white!important;
